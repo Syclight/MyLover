@@ -1,0 +1,51 @@
+return {
+    mesh = "samples/cube3d/assets/models/level",
+    render = {
+        -- 这些对象仍进入对象表，供 gameplay 读取，但不参与 LevelMesh 渲染。
+        skipSuffixes = { "_col", "_trigger" },
+        colliderSuffix = "_col",
+        triggerSuffix = "_trigger",
+    },
+    materials = {
+        default = {
+            albedo = "cube3d_texture",
+            normal = "cube3d_normal_flat",
+            pbr = "cube3d_pbr_neutral",
+            color = { 1.0, 1.0, 1.0, 1.0 },
+            metallic = 0.0,
+            roughness = 0.65,
+            ao = 1.0,
+            normalScale = 0.35,
+        },
+        floor = {
+            albedo = "cube3d_texture",
+            normal = "cube3d_normal_flat",
+            pbr = "cube3d_pbr_neutral",
+            color = { 0.48, 0.56, 0.62, 1.0 },
+            metallic = 0.0,
+            roughness = 0.82,
+            ao = 1.0,
+            normalScale = 0.25,
+        },
+        wall = {
+            albedo = "cube3d_texture",
+            normal = "cube3d_normal_flat",
+            pbr = "cube3d_pbr_neutral",
+            color = { 0.70, 0.74, 0.80, 1.0 },
+            metallic = 0.0,
+            roughness = 0.55,
+            ao = 1.0,
+            normalScale = 0.2,
+        },
+        accent = {
+            albedo = "cube3d_texture",
+            normal = "cube3d_normal_flat",
+            pbr = "cube3d_pbr_neutral",
+            color = { 0.95, 0.70, 0.42, 1.0 },
+            metallic = 0.15,
+            roughness = 0.38,
+            ao = 1.0,
+            normalScale = 0.3,
+        },
+    },
+}

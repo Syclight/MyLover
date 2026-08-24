@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>场景编辑器</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #2b2b2b; color: #fff; overflow: hidden; }
+        #container { display: flex; height: 100vh; }
+        #canvas-area { flex: 1; position: relative; overflow: hidden; background: #1a1a1a; }
+        #canvas-wrapper { width: 100%; height: 100%; }
+        canvas { border: none; background: #1a1a1a; cursor: crosshair; display: block; width: 100%; height: 100%; }
+        #toolbar { position: absolute; top: 10px; left: 10px; background: rgba(51,51,51,0.95); padding: 6px; border-radius: 6px; z-index: 10; }
+        #toolbar button { padding: 5px 10px; background: #4CAF50; border: none; color: white; cursor: pointer; border-radius: 4px; margin: 0 3px 3px 0; font-size: 12px; }
+        #toolbar button:hover { background: #45a049; }
+        #zoom-info { position: absolute; bottom: 10px; right: 10px; background: rgba(51,51,51,0.95); padding: 8px 12px; border-radius: 4px; font-size: 12px; }
+        #sidebar { width: 320px; background: #333; padding: 15px; overflow-y: auto; border-left: 2px solid #555; }
+        .section { margin-bottom: 20px; }
+        .section h3 { margin: 0 0 10px 0; border-bottom: 1px solid #555; padding-bottom: 5px; }
+        .tile-palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+        .tile-btn { padding: 10px; border: 2px solid #555; background: #444; cursor: pointer; text-align: center; font-size: 11px; }
+        .tile-btn.active { border-color: #4CAF50; background: #555; }
+        .tile-btn:hover { background: #555; }
+        button { padding: 8px 15px; background: #4CAF50; border: none; color: white; cursor: pointer; border-radius: 4px; margin: 5px 5px 5px 0; }
+        button:hover { background: #45a049; }
+        input, select { width: 100%; padding: 5px; margin: 5px 0; background: #444; border: 1px solid #555; color: #fff; }
+        .entity-list { max-height: 200px; overflow-y: auto; }
+        .entity-item { padding: 8px; background: #444; margin: 5px 0; border-radius: 4px; cursor: pointer; }
+        .entity-item:hover { background: #555; }
+        .entity-item.selected { background: #4CAF50; }
+        #tooltip { position: absolute; background: rgba(0,0,0,0.9); color: #fff; padding: 5px 10px; border-radius: 4px; pointer-events: none; display: none; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="canvas-area">
+            <div id="toolbar">
+                <button id="tool-pan">拖动</button>
+                <button id="tool-draw">绘制</button>
+                <button id="tool-erase">擦除</button>
+                <button id="tool-entity">实体</button>
+                <button id="tool-select">选择</button>
+                <button id="tool-copy">复制区块</button>
+                <br>
+                <button id="undo">撤销</button>
+                <button id="redo">重做</button>
+            </div>
+            <div id="canvas-wrapper">
+                <canvas id="canvas"></canvas>
+            </div>
+            <div id="zoom-info">缩放: 100%</div>
+        </div>
+        <div id="sidebar">
+            <div class="section">
+                <h3>当前文件</h3>
+                <div id="current-map">当前地图: shader_maze_1.json</div>
+                <select id="map-source">
+                    <option value="../assets/data/shader_maze_1.json">shader_maze_1.json</option>
+                    <option value="../assets/data/level_1.json">level_1.json</option>
+                </select>
+                <button id="reload-map">重新加载</button>
+                <button id="center-map">居中显示</button>
+            </div>
+            <div class="section">
+                <h3>地图设置</h3>
+                <label>宽度: <input type="number" id="map-width" min="5" max="50"></label>
+                <label>高度: <input type="number" id="map-height" min="5" max="50"></label>
+                <button id="resize-map">调整尺寸</button>
+            </div>
+            <div class="section">
+                <h3>Tile调色板</h3>
+                <div class="tile-palette" id="tile-palette"></div>
+            </div>
+            <div class="section">
+                <h3>实体</h3>
+                <select id="entity-type"></select>
+                <div class="entity-list" id="entity-list"></div>
+            </div>
+            <div class="section">
+                <h3>属性</h3>
+                <div id="properties"></div>
+            </div>
+            <div class="section">
+                <button id="save">保存 JSON + SMAP</button>
+                <input type="file" id="import" accept=".json" style="display:none">
+                <button onclick="document.getElementById('import').click()">导入</button>
+            </div>
+        </div>
+    </div>
+    <div id="tooltip"></div>
+    <script src="embeddedMaps.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>

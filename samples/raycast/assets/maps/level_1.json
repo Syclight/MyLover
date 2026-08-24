@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "name": "RaycastScene-2_5draycast_map1",
+    "version": "1.0",
+    "width": 20,
+    "height": 13,
+    "tileSize": 1,
+    "unit": "meter"
+  },
+  "layers": [
+    {
+      "name": "ground_and_walls",
+      "type": "tilelayer",
+      "data": [
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 2, 6, 2, 0, 0, 0, 0, 1,
+        1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9,
+        1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 8, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+      ]
+    },
+    {
+      "name": "entities",
+      "type": "objectlayer",
+      "objects": [
+        {
+          "id": 101,
+          "type": "player_spawn",
+          "x": 2,
+          "y": 2,
+          "properties": {
+            "angle": 18,
+            "fov": 60,
+            "height": 1.2,
+            "bobAmount": 0.02,
+            "bobSpeed": 8.0
+          }
+        },
+        {
+          "id": 102,
+          "type": "statue_sprite",
+          "x": 7.5,
+          "y": 5.5,
+          "properties": {
+            "desc": "残破的石膏像",
+            "detail": "一尊没有面孔的石膏像，伫立在无尽的空旷中。\n\n在这个奇怪的世界里，\n古典雕塑的残迹象征着时间与记忆的停滞。\n\n「它的影子，似乎比它本身更加真实沉重。」"
+          }
+        }
+      ]
+    }
+  ],
+  "tilesets": [
+    {
+      "id": 1,
+      "name": "red_wall",
+      "color": "#CC5940",
+      "passable": false,
+      "height": 2.3,
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "solid"
+      }
+    },
+    {
+      "id": 2,
+      "name": "green_wall",
+      "color": "#809973",
+      "passable": false,
+      "height": 2.3,
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "solid"
+      }
+    },
+    {
+      "id": 3,
+      "name": "blue_wall",
+      "color": "#E6D9BF",
+      "passable": false,
+      "height": 2.3,
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "solid"
+      }
+    },
+    {
+      "id": 4,
+      "name": "wooden_box",
+      "color": "#CC9933",
+      "passable": false,
+      "height": 1.0,
+      "properties": {
+        "kind": "box",
+        "blocksMovement": true,
+        "raycastBarrier": false,
+        "occluder": false,
+        "visible": true,
+        "renderType": "solid"
+      }
+    },
+    {
+      "id": 5,
+      "name": "statue_shadow_blocker",
+      "color": "#E6E6E6",
+      "passable": false,
+      "height": 1.8,
+      "properties": {
+        "kind": "shadow_blocker",
+        "blocksMovement": true,
+        "raycastBarrier": false,
+        "occluder": false,
+        "visible": false,
+        "renderType": "shadow_only"
+      }
+    },
+    {
+      "id": 6,
+      "name": "green_wall_painting",
+      "color": "#809973",
+      "passable": false,
+      "height": 2.3,
+      "texture": "painting-spring",
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "painting_wall",
+        "face": "north",
+        "paintingFrame": {
+          "scale": 1.0,
+          "width": 0.5,
+          "height": 0.9,
+          "zOffset": 1.4,
+          "frameThickness": 0.08,
+          "depthBias": 0.03
+        },
+        "desc": "风格迥异的画作",
+        "detail": "《春之女神》\n\n飘逸的长发和淡雅的颜色，奇怪的内容和构图风格。\n在这座不知通往何处的迷宫里，它与环境格格不入。\n\n「它似乎是一种隐喻。」"
+      }
+    },
+    {
+      "id": 7,
+      "name": "red_wall_painting",
+      "color": "#CC5940",
+      "passable": false,
+      "height": 2.3,
+      "texture": "painting-summer",
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "painting_wall",
+        "face": "east",
+        "paintingFrame": {
+          "scale": 0.6,
+          "width": 0.5,
+          "height": 0.9,
+          "zOffset": 1.4,
+          "frameThickness": 0.08,
+          "depthBias": 0.03
+        },
+        "desc": "风格迥异的画作",
+        "detail": "《夏之女神》\n\n飘逸的长发和淡雅的颜色，奇怪的内容和构图风格。\n在这座不知通往何处的迷宫里，它与环境格格不入。\n\n「它似乎是一种隐喻。」"
+      }
+    },
+    {
+      "id": 8,
+      "name": "red_wall_painting",
+      "color": "#CC5940",
+      "passable": false,
+      "height": 2.3,
+      "texture": "painting-fall",
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "painting_wall",
+        "face": "west",
+        "paintingFrame": {
+          "scale": 0.6,
+          "width": 0.5,
+          "height": 0.9,
+          "zOffset": 1.4,
+          "frameThickness": 0.08,
+          "depthBias": 0.03
+        },
+        "desc": "风格迥异的画作",
+        "detail": "《秋之女神》\n\n飘逸的长发和淡雅的颜色，奇怪的内容和构图风格。\n在这座不知通往何处的迷宫里，它与环境格格不入。\n\n「它似乎是一种隐喻。」"
+      }
+    },
+    {
+      "id": 9,
+      "name": "red_wall_painting",
+      "color": "#CC5940",
+      "passable": false,
+      "height": 2.3,
+      "texture": "painting-winter",
+      "properties": {
+        "kind": "wall",
+        "blocksMovement": true,
+        "raycastBarrier": true,
+        "occluder": true,
+        "visible": true,
+        "renderType": "painting_wall",
+        "face": "west",
+        "paintingFrame": {
+          "scale": 0.6,
+          "width": 0.5,
+          "height": 0.9,
+          "zOffset": 1.4,
+          "frameThickness": 0.08,
+          "depthBias": 0.03
+        },
+        "desc": "风格迥异的画作",
+        "detail": "《冬之女神》\n\n飘逸的长发和淡雅的颜色，奇怪的内容和构图风格。\n在这座不知通往何处的迷宫里，它与环境格格不入。\n\n「它似乎是一种隐喻。」"
+      }
+    }
+  ]
+}
+

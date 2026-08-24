@@ -1,0 +1,10 @@
+{
+	"Lua.workspace.library": [
+		"${3rd}/love2d/library",
+		"lib"
+	],
+	"Lua.runtime.version": "LuaJIT",
+	"Lua.workspace.checkThirdParty": false,
+	"python-envs.defaultEnvManager": "ms-python.python:conda",
+	"python-envs.defaultPackageManager": "ms-python.python:conda",
+}

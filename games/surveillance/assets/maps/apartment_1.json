@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "name": "Government Apartment 1",
+    "version": "1.0",
+    "width": 20,
+    "height": 14,
+    "tileSize": 0.5,
+    "unit": "meter"
+  },
+  "layers": [
+    {
+      "name": "walls",
+      "type": "tilelayer",
+      "data": [
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+      ]
+    },
+    {
+      "name": "objects",
+      "type": "objectlayer",
+      "objects": [
+        {
+          "id": 1, "type": "player_spawn", "x": 10.5, "y": 9.5,
+          "properties": { "angle": 270, "pitch": 0, "fov": 84, "height": 1.28 }
+        },
+        {
+          "id": 2, "type": "table", "x": 10.5, "y": 3.0,
+          "properties": { "desc": "办公桌", "detail": "一张政府配发的旧办公桌。", "width": 1.6, "depth": 0.7, "topHeight": 0.78, "thickness": 0.06, "legThickness": 0.08 }
+        },
+        {
+          "id": 3, "type": "computer", "x": 10.5, "y": 3.0,
+          "properties": { "interaction": "terminal", "desc": "政府终端机", "detail": "国家安全部配发的审查终端。按 E 接入。", "width": 0.6, "depth": 0.5, "targetHeight": 1.35, "interactionPriority": 5 }
+        },
+        {
+          "id": 4, "type": "chair", "x": 11.6, "y": 3.4,
+          "properties": { "interaction": "sit", "desc": "椅子", "width": 0.55, "depth": 0.55, "targetHeight": 0.9 }
+        },
+        {
+          "id": 30, "type": "air_conditioner", "x": 10.5, "y": 1.0,
+          "properties": { "desc": "壁挂空调", "topHeight": 2.45 }
+        },
+        {
+          "id": 32, "type": "wall_clock", "x": 6.2, "y": 1.0,
+          "properties": { "desc": "挂钟", "height": 1.72 }
+        },
+        {
+          "id": 33, "type": "wall_calendar", "x": 4.0, "y": 13.0,
+          "properties": { "desc": "挂历", "height": 1.55, "facing": -1 }
+        },
+        {
+          "id": 31, "type": "remote", "x": 9.6, "y": 3.35,
+          "properties": { "interaction": "pickup", "controls": "ac", "desc": "空调遥控器", "width": 0.20, "depth": 0.28, "targetHeight": 0.88, "topHeight": 0.78, "interactionPriority": 6 }
+        },
+        {
+          "id": 5, "type": "point_light", "x": 10.5, "y": 3.2,
+          "properties": { "color": "#66ff99", "intensity": 1.4, "radius": 2.6, "height": 1.1, "pulseAmount": 0.07, "pulseSpeed": 3.0 }
+        },
+        {
+          "id": 10, "type": "bed", "x": 16.5, "y": 10.8,
+          "properties": { "yaw": 0, "interaction": "rest", "pose": "lie", "desc": "床", "width": 1.5, "depth": 2.0, "targetHeight": 0.75, "interactionPriority": 3 }
+        },
+        {
+          "id": 11, "type": "sofa", "x": 2.4, "y": 8.0,
+          "properties": { "yaw": 270, "interaction": "rest", "pose": "sofa", "desc": "沙发", "width": 1.8, "depth": 0.85, "targetHeight": 0.85, "interactionPriority": 3 }
+        },
+        {
+          "id": 12, "type": "bookshelf", "x": 2.6, "y": 1.6, "properties": { "yaw": 0 }
+        },
+        {
+          "id": 13, "type": "bookshelf", "x": 17.0, "y": 1.6, "properties": { "yaw": 0 }
+        },
+        {
+          "id": 14, "type": "cabinet", "x": 1.7, "y": 4.6, "properties": { "yaw": 270 }
+        },
+        {
+          "id": 20, "type": "lamp", "x": 6.0, "y": 7.0, "properties": {}
+        },
+        {
+          "id": 21, "type": "lamp", "x": 14.0, "y": 7.0, "properties": {}
+        },
+        {
+          "id": 22, "type": "point_light", "x": 6.0, "y": 7.0,
+          "properties": { "color": "#ffd9a0", "intensity": 1.8, "radius": 6.5, "height": 2.12 }
+        },
+        {
+          "id": 23, "type": "point_light", "x": 14.0, "y": 7.0,
+          "properties": { "color": "#ffe2c0", "intensity": 1.7, "radius": 6.5, "height": 2.12 }
+        }
+      ]
+    }
+  ],
+  "tilesets": [
+    {
+      "id": 1, "name": "outer_wall", "color": "#4a4038", "passable": false, "height": 2.5,
+      "properties": { "blocksMovement": true, "visible": true }
+    }
+  ]
+}
